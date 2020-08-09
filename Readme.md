@@ -5,8 +5,8 @@ if the name was
 ```name```
 
 ## Requirments
-* SSA data in folder names (just keep the raw format and remove the readme pdf)
-* list of tlds in a file named tlds.txt in directory
+* [SSA data](https://www.ssa.gov/oact/babynames/limits.html) in folder names (just keep the raw format and remove the readme pdf)
+* [list of tlds](https://tld-list.com/free-downloads) in a file named tlds.txt in directory
 
 ## Outputs
 Raw list of avaliable names
