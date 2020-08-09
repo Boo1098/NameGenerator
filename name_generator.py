@@ -13,7 +13,7 @@ print(files)
 names = []
 for filename in files:
     print('Starting to read {}'.format(filename))
-    with open(NAME_PATH.format(filename)) as f:
+    with open((NAME_PATH + '{}').format(filename)) as f:
         for line in f:
             name = line.split(',')[0]
             if name not in names:
