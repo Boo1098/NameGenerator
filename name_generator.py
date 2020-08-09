@@ -56,27 +56,27 @@ for name in names:
                 new_names.append([name[0], name[1][:-len(tld)], tld])
 names = new_names
 
-# TODO
+# TODO Can this be done faster?
 # Filter taken domains
-# new_names = []
-# count = 0
-# for name in names:
-#     count += 1
-#     url = '{}.{}'.format(name[1], name[2])
-#     if len(name[1]) >= 3:
-#         try:
-#             w = whois.whois(url)
-#         except:
-#             print('whois failed for {}'.format(format_name(name)))
-#         try:
-#             if w['status'] is None:
-#                 new_names.append(name)
-#         except:
-#             print('oops')
-#
-#     if count % 10 == 0:
-#         print('{}/{}'.format(count, len(names)))
-# names = new_names
+new_names = []
+count = 0
+for name in names:
+    count += 1
+    url = '{}.{}'.format(name[1], name[2])
+    if len(name[1]) >= 3:
+        try:
+            w = whois.whois(url)
+        except:
+            print('whois failed for {}'.format(format_name(name)))
+        try:
+            if w['status'] is None:
+                new_names.append(name)
+        except:
+            print('w was empty for some reason')
+
+    if count % 10 == 0:
+        print('{}/{}'.format(count, len(names)))
+names = new_names
 
 print_names(names)
 
